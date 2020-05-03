@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
 import pages.HomePage;
 
 import java.util.List;
@@ -19,7 +20,7 @@ public class BaseTests {
     public void setUp(){
         System.setProperty("webdriver.chrome.driver","C:\\Users\\Vishal\\Downloads\\chromedriver.exe");
         driver = new ChromeDriver();
-        driver.get("https://the-internet.herokuapp.com");
+        goHome();
 
         homePage = new HomePage(driver);
 
@@ -31,6 +32,11 @@ public class BaseTests {
         //List<WebElement> anchorTags = driver.findElements(By.tagName("li"));
         //System.out.println("No of list tags :" + anchorTags.size());
 
+    }
+
+    @BeforeMethod
+    public void goHome(){
+        driver.get("https://the-internet.herokuapp.com");
     }
 
     @AfterClass

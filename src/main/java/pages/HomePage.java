@@ -46,6 +46,11 @@ public class HomePage {
         return new JavaScriptAlert(driver);
     }
 
+    public FileUpload clickFileUpload(){
+        clickLink("File Upload");
+        return new FileUpload(driver);
+    }
+
 
     private void clickLink(String linkTextActual){                  // generic method for clicking the links on homepage
         driver.findElement(By.linkText(linkTextActual)).click();
