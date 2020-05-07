@@ -51,6 +51,21 @@ public class HomePage {
         return new FileUpload(driver);
     }
 
+    public EntryAd clickEntryAd(){
+        clickLink("Entry Ad");
+        return new EntryAd(driver);
+    }
+
+    public ContextMenu clickContextMenu(){
+        clickLink("Context Menu");
+        return new ContextMenu(driver);
+    }
+
+    public WYSIWYGEditor clickWYSIWYGEditor(){
+        clickLink("WYSIWYG Editor");
+        return new WYSIWYGEditor(driver);
+    }
+
 
     private void clickLink(String linkTextActual){                  // generic method for clicking the links on homepage
         driver.findElement(By.linkText(linkTextActual)).click();
