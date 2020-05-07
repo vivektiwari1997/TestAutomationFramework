@@ -66,6 +66,11 @@ public class HomePage {
         return new WYSIWYGEditor(driver);
     }
 
+    public MultipleFrames clickFrames(){
+        clickLink("Frames");
+        return new MultipleFrames(driver);
+    }
+
 
     private void clickLink(String linkTextActual){                  // generic method for clicking the links on homepage
         driver.findElement(By.linkText(linkTextActual)).click();
