@@ -71,6 +71,11 @@ public class HomePage {
         return new MultipleFrames(driver);
     }
 
+    public DynamicLoading clickDynamicLoading(){
+        clickLink("Dynamic Loading");
+        return new DynamicLoading(driver);
+    }
+
 
     private void clickLink(String linkTextActual){                  // generic method for clicking the links on homepage
         driver.findElement(By.linkText(linkTextActual)).click();

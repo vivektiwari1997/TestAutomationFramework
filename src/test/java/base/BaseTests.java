@@ -21,7 +21,7 @@ public class BaseTests {
     public void setUp(){
         System.setProperty("webdriver.chrome.driver","C:\\Users\\Vishal\\Downloads\\chromedriver.exe");
         driver = new ChromeDriver();
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        //driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);  //implicit wait call for 5 seconds
         goHome();
 
         homePage = new HomePage(driver);
