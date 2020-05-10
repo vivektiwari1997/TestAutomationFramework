@@ -76,6 +76,15 @@ public class HomePage {
         return new DynamicLoading(driver);
     }
 
+    public LargeDeepDOM clickLargeDeepDOM(){
+        clickLink("Large & Deep DOM");
+        return new LargeDeepDOM(driver);
+    }
+
+    public InfiniteScroll clickInfiniteScroll(){
+        clickLink("Infinite Scroll");
+        return new InfiniteScroll(driver);
+    }
 
     private void clickLink(String linkTextActual){                  // generic method for clicking the links on homepage
         driver.findElement(By.linkText(linkTextActual)).click();
