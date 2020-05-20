@@ -13,5 +13,12 @@ public class windowsActionsTest extends BaseTests {
         windowsManagerActions().refreshPage();
         windowsManagerActions().goForward();
         windowsManagerActions().goToURL("https://www.google.com");
+
+    }
+    @Test
+    public void validateMultipleWindowsHandles(){
+        homePage.clickMultipleWindows().clickHere();
+
+        windowsManagerActions().switchToTab("New Window");
     }
 }

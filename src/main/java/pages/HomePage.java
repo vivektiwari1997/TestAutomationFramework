@@ -86,6 +86,12 @@ public class HomePage {
         return new InfiniteScroll(driver);
     }
 
+    public MultipleWindowsPages clickMultipleWindows(){
+        clickLink("Multiple Windows");
+        return new MultipleWindowsPages(driver);
+    }
+
+
     private void clickLink(String linkTextActual){                  // generic method for clicking the links on homepage
         driver.findElement(By.linkText(linkTextActual)).click();
     }
