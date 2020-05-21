@@ -1,15 +1,17 @@
 package base;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import com.google.common.io.Files;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import pages.HomePage;
 import utils.WindowsManager;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -35,6 +37,19 @@ public class BaseTests {
         //List<WebElement> anchorTags = driver.findElements(By.tagName("li"));
         //System.out.println("No of list tags :" + anchorTags.size());
 
+    }
+
+    @AfterMethod
+    public void takeScreenshot(){
+       var camera =  (TakesScreenshot)driver;  // casted my driver to TakesScreenshot class and allocated to object camera
+        File screenshot = camera.getScreenshotAs(OutputType.FILE);
+        try {
+            Files.move(screenshot, new File("C:\\Users\\Vishal\\TestAutomation\\src\\main\\java\\Screenshots\\test.png"));
+        }catch (IOException e){
+            e.printStackTrace();
+        }
+
+        System.out.println("Path of screenshot" + screenshot.getAbsolutePath());
     }
 
     @BeforeMethod

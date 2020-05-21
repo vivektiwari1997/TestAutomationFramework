@@ -34,4 +34,8 @@ public class Example2Page {
     public String returnLoadingText(){
         return driver.findElement(afterLoadingText).getText();
     }
+
+    public Boolean isStartButtonDisplayed(){
+        return driver.findElement(startLoadButton).isDisplayed();
+    }
 }
